@@ -1,0 +1,14 @@
+[run]
+omit =
+    tests/*
+    *migrations/*
+    manage.py
+    tdd/asgi.py
+    tdd/wsgi.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if TYPE_CHECKING:
+    def __str__
+    raise NotImplementedError
