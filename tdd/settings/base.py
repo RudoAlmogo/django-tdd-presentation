@@ -47,7 +47,9 @@ THIRD_PARTY_APPS = [
     "rest_framework",
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    "restaurants",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
