@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+    "name": "TDD",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/poetry:1": {}
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "poetry install && pip install pre-commit && pre-commit install",
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.testing.pytestArgs": [
+                    "--override-ini",
+                    "addopts=-vv"
+                ],
+                "python.testing.unittestEnabled": false,
+                "python.testing.pytestEnabled": true,
+                "python.analysis.diagnosticSeverityOverrides": {
+                    "reportIncompatibleVariableOverride": "none",
+                    "reportIncompatibleMethodOverride": "none",
+                    "reportImportCycles": "none"
+                },
+                "python.analysis.indexing": true,
+                "python.venvPath": "/home/vscode/.cache/pypoetry/virtualenvs"
+            },
+            "extensions": [
+                "bungcip.better-toml",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
+}
