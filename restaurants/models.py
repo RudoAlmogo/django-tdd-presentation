@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
@@ -9,6 +10,11 @@ class Restaurant(models.Model):
     opening_time = models.TimeField(_('opening_time'))
     closing_time = models.TimeField(_('closing_time'))
     active = models.BooleanField(_('active'))
+
+    @property
+    def is_open(self):
+        now = timezone.now().time()
+        return self.active and self.opening_time <= now and self.closing_time > now
 
     def __str__(self) -> str:
         return self.name

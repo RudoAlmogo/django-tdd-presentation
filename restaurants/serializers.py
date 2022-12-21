@@ -4,6 +4,8 @@ from .models import Restaurant
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
+    is_open = serializers.BooleanField(read_only=True)
+
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        exclude = ('active',)
