@@ -39,7 +39,7 @@ def test_get_resturant_detail_returns_200_and_restaurant(
         'id': restaurant_valencia.id,
         'name': restaurant_valencia.name,
         'address': restaurant_valencia.address,
-        'opening_time': "13:00:00",
-        'closing_time': restaurant_valencia.closing_time,
-        'active': restaurant_valencia.active,
+        'opening_time': str(restaurant_valencia.opening_time),
+        'closing_time': str(restaurant_valencia.closing_time),
+        'is_open': restaurant_valencia.is_open,
     }
