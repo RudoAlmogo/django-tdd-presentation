@@ -4,6 +4,6 @@ from .models import Restaurant
 from .serializers import RestaurantSerializer
 
 
-class RestaurantViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
+class RestaurantViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer

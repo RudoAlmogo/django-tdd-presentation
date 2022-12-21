@@ -14,7 +14,7 @@ def test_get_resturants_returns_list_of_restaurants(
             'id': restaurant_valencia.id,
             'name': restaurant_valencia.name,
             'address': restaurant_valencia.address,
-            'opening_time': restaurant_valencia.opening_time,
+            'opening_time': "13:00:00",
             'closing_time': restaurant_valencia.closing_time,
             'active': restaurant_valencia.active,
         },
@@ -27,3 +27,19 @@ def test_get_resturants_returns_list_of_restaurants(
             'active': restaurant_madrid.active,
         },
     ]
+
+
+def test_get_resturant_detail_returns_200_and_restaurant(
+    client: Client, restaurant_valencia: Restaurant, restaurant_madrid: Restaurant
+):
+    response = client.get(f'/restaurants/{restaurant_valencia.id}/')
+
+    assert response.status_code == 200
+    assert response.json() == {
+        'id': restaurant_valencia.id,
+        'name': restaurant_valencia.name,
+        'address': restaurant_valencia.address,
+        'opening_time': "13:00:00",
+        'closing_time': restaurant_valencia.closing_time,
+        'active': restaurant_valencia.active,
+    }
