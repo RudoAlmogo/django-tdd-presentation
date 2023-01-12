@@ -45,6 +45,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "django_extensions",
+    "django_filters",
 ]
 
 PROJECT_APPS = [
@@ -140,3 +142,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # This is needed for generic type inheritance in admin and querysets
 # https://github.com/typeddjango/django-stubs/tree/36002a20874a4f1d5671e2f784c7257eb50fe691#i-cannot-use-queryset-or-manager-with-type-annotations
 django_stubs_ext.monkeypatch()
+
+# Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
+}
