@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package tdd.restaurants;
+
+service RestaurantController {
+    rpc List(RestaurantListRequest) returns (RestaurantListResponse) {}
+    rpc Retrieve(RestaurantRetrieveRequest) returns (RestaurantResponse) {}
+}
+
+message RestaurantListRequest {
+}
+
+message RestaurantListResponse {
+    repeated RestaurantResponse results = 1;
+}
+
+message RestaurantResponse {
+    int32 id = 1;
+    string name = 2;
+}
+
+message RestaurantRetrieveRequest {
+    int32 id = 1;
+}

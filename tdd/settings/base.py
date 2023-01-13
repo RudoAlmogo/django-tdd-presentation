@@ -17,7 +17,7 @@ import django_stubs_ext
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "django_extensions",
     "django_filters",
+    "django_socio_grpc",
 ]
 
 PROJECT_APPS = [
@@ -148,4 +149,10 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
     ],
+}
+
+
+# Django Socio gRPC
+GRPC_FRAMEWORK = {
+    'ROOT_HANDLERS_HOOK': 'restaurants.grpc.handlers.grpc_handlers',
 }
