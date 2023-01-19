@@ -12,7 +12,7 @@ class Restaurant(models.Model):
     active = models.BooleanField(_('active'))
 
     @property
-    def is_open(self):
+    def is_open(self) -> bool:
         now = timezone.now().time()
         return self.active and self.opening_time <= now and self.closing_time > now
 

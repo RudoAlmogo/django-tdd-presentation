@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\"restaurants/grpc/restaurants.proto\x12\x0ftdd.restaurants\"\x17\n\x15RestaurantListRequest\"N\n\x16RestaurantListResponse\x12\x34\n\x07results\x18\x01 \x03(\x0b\x32#.tdd.restaurants.RestaurantResponse\".\n\x12RestaurantResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\"\'\n\x19RestaurantRetrieveRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x32\xd0\x01\n\x14RestaurantController\x12Y\n\x04List\x12&.tdd.restaurants.RestaurantListRequest\x1a\'.tdd.restaurants.RestaurantListResponse\"\x00\x12]\n\x08Retrieve\x12*.tdd.restaurants.RestaurantRetrieveRequest\x1a#.tdd.restaurants.RestaurantResponse\"\x00\x62\x06proto3'
+    b'\n\"restaurants/grpc/restaurants.proto\x12\x0ftdd.restaurants\"\x17\n\x15RestaurantListRequest\"N\n\x16RestaurantListResponse\x12\x34\n\x07results\x18\x01 \x03(\x0b\x32#.tdd.restaurants.RestaurantResponse\"k\n\x12RestaurantResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0copening_time\x18\x03 \x01(\t\x12\x14\n\x0c\x63losing_time\x18\x04 \x01(\t\x12\x0f\n\x07is_open\x18\x05 \x01(\x08\"\'\n\x19RestaurantRetrieveRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x32\xd0\x01\n\x14RestaurantController\x12Y\n\x04List\x12&.tdd.restaurants.RestaurantListRequest\x1a\'.tdd.restaurants.RestaurantListResponse\"\x00\x12]\n\x08Retrieve\x12*.tdd.restaurants.RestaurantRetrieveRequest\x1a#.tdd.restaurants.RestaurantResponse\"\x00\x62\x06proto3'
 )
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
@@ -27,9 +27,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
     _RESTAURANTLISTRESPONSE._serialized_start = 80
     _RESTAURANTLISTRESPONSE._serialized_end = 158
     _RESTAURANTRESPONSE._serialized_start = 160
-    _RESTAURANTRESPONSE._serialized_end = 206
-    _RESTAURANTRETRIEVEREQUEST._serialized_start = 208
-    _RESTAURANTRETRIEVEREQUEST._serialized_end = 247
-    _RESTAURANTCONTROLLER._serialized_start = 250
-    _RESTAURANTCONTROLLER._serialized_end = 458
+    _RESTAURANTRESPONSE._serialized_end = 267
+    _RESTAURANTRETRIEVEREQUEST._serialized_start = 269
+    _RESTAURANTRETRIEVEREQUEST._serialized_end = 308
+    _RESTAURANTCONTROLLER._serialized_start = 311
+    _RESTAURANTCONTROLLER._serialized_end = 519
 # @@protoc_insertion_point(module_scope)

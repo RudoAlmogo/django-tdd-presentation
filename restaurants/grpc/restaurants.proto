@@ -17,6 +17,9 @@ message RestaurantListResponse {
 message RestaurantResponse {
     int32 id = 1;
     string name = 2;
+    string opening_time = 3;
+    string closing_time = 4;
+    bool is_open = 5;
 }
 
 message RestaurantRetrieveRequest {
