@@ -23,3 +23,4 @@ Activate pre-commit:
 - Postman autoload .protofile or at least share between endpoints
 - get_method_serializer not working
 - Performance comparison
+- How to test
