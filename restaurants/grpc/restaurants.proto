@@ -20,6 +20,7 @@ message RestaurantResponse {
     string opening_time = 3;
     string closing_time = 4;
     bool is_open = 5;
+    string hello = 6;
 }
 
 message RestaurantRetrieveRequest {
